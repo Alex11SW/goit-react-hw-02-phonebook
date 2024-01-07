@@ -1,0 +1,50 @@
+.books {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; Центрирование по горизонтали */
+  /* align-items: center; Центрирование по вертикали */
+  height: 300px; /* Высота равная высоте видимой области */
+  background-color: #ffffff; /* Белый фон */
+  margin-bottom: 50px;
+}
+
+.form {
+  width: 300px;
+  display: flex;
+  flex-direction: column; /* Элементы располагаются в столбик */
+  align-items: flex-start; /* Выравнивание элементов по левому краю */
+  padding: 20px; /* Отступы для формы */
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px; /* Отступ под метками */
+}
+
+input {
+  padding: 8px; /* Внутренние отступы для input */
+  margin-bottom: 10px; /* Отступ между input */
+  width: 200px; /* Ширина input */
+}
+
+button {
+  padding: 10px 15px; /* Отступы для кнопки */
+  background-color: #333; /* Цвет фона кнопки */
+  color: #fff; /* Цвет текста кнопки */
+  border: none; /* Убираем границу кнопки */
+  cursor: pointer; /* Изменение курсора при наведении на кнопку */
+}
+
+button:hover {
+  background-color: #555; /* Изменение цвета фона при наведении */
+}
