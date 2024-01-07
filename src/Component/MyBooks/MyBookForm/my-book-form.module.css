@@ -2,22 +2,21 @@
   width: 300px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; Центрирование по горизонтали */
-  /* align-items: center; Центрирование по вертикали */
-  height: 300px; /* Высота равная высоте видимой области */
-  background-color: #ffffff; /* Белый фон */
-  margin-bottom: 50px;
+  align-items: flex-start;
+  height: 300px;
+  background-color: #ffffff;
+  margin-left: 20px;
 }
 
 .form {
   width: 300px;
   display: flex;
-  flex-direction: column; /* Элементы располагаются в столбик */
-  align-items: flex-start; /* Выравнивание элементов по левому краю */
-  padding: 20px; /* Отступы для формы */
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
   border: 1px solid;
   border-radius: 5px;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -25,26 +24,25 @@
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
-
 label {
-  margin-bottom: 5px; /* Отступ под метками */
+  margin-bottom: 5px;
 }
-
 input {
-  padding: 8px; /* Внутренние отступы для input */
-  margin-bottom: 10px; /* Отступ между input */
-  width: 200px; /* Ширина input */
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 200px;
 }
-
 button {
-  padding: 10px 15px; /* Отступы для кнопки */
-  background-color: #333; /* Цвет фона кнопки */
-  color: #fff; /* Цвет текста кнопки */
-  border: none; /* Убираем границу кнопки */
-  cursor: pointer; /* Изменение курсора при наведении на кнопку */
+  padding: 5px 15px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 5px;
 }
-
 button:hover {
-  background-color: #555; /* Изменение цвета фона при наведении */
+  background-color: #555;
 }

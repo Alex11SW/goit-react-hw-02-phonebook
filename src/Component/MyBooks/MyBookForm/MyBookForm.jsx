@@ -3,8 +3,7 @@ import { nanoid } from "nanoid";
  import styles from "./my-book-form.module.css";
 
 const INITIAL_STATE = {
-     contacts: [],
- 
+  contacts: [],
   name: '',
   number: ''
  }
@@ -16,41 +15,36 @@ class MyBookForm extends Component {
    state = {...INITIAL_STATE}
     
     handleChange = ({ target}) => {
-        const { name, value } = target;
-        this.setState({
-            [name]: value
-        })
-    //      const { name, value } = target;
-    // if (name === 'number') {
-    //   // Форматування номера телефону у форматі "222-22-22"
-    //   const formattedNumber = value.replace(/\D/g, '').replace(/(\d{3})(\d{2})(\d{2})/, '$1-$2-$3');
-    //   this.setState({
-    //     [name]: formattedNumber
-    //   });
-    // } else {
-    //   this.setState({
-    //     [name]: value
-    //   });
-    //     }
-        
-
-
-
+        // const { name, value } = target;
+        // this.setState({
+        //     [name]: value
+        // }
+    const { name, value } = target;
+        if (name === 'number') {
+            let formattedNumber = value.replace(/\D/g, ''); 
+            if (formattedNumber.length > 2) {
+                formattedNumber = formattedNumber.replace(/(\d{3})(\d{2})/, '$1-$2');
+            }
+            if (formattedNumber.length > 5) {
+                formattedNumber = formattedNumber.replace(/(\d{3})-(\d{2})(\d{2})/, '$1-$2-$3');
+            }
+            this.setState({
+                [name]: formattedNumber,
+            });
+        } else {
+            this.setState({
+                [name]: value,
+            });
+        }
     }
-
-   
-
     handleSubmit = (e) => {
         e.preventDefault(); 
         this.props.onSubmit({ ...this.state }); 
         this.reset();
     }
-
     reset() {
  this.setState({...INITIAL_STATE})
     }
-
-
     render() {
         const { bookTitleId, bookAuthorId, handleSubmit, handleChange } = this;
         const { name, number } = this.state;
@@ -64,7 +58,7 @@ class MyBookForm extends Component {
                     </div>
                     <div className={styles.formGroup}>
                         <label  htmlFor={bookAuthorId}>Number</label>
-                        <input value={number} onChange={handleChange} id={bookAuthorId} type="tel" pattern="[0-9]*" name="number" placeholder="Number" required />
+                        <input value={number} onChange={handleChange} id={bookAuthorId} type="tel" pattern="[0-9-]*" name="number" placeholder="Number" required />
                     </div>
                     <button type="submit">Add contact</button>
                 </form>

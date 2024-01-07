@@ -88,7 +88,6 @@ class MyBooks extends Component {
         return (
             <div className={styles.wrapper}>
                 <MyBookForm onSubmit={addBook} />
-            
                 <div className={styles.listWrapper}>
                         <h2>Contacts</h2>
                     <p>Find contacts by name</p>
